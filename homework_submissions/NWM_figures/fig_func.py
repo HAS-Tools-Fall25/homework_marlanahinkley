@@ -15,7 +15,7 @@ def create_basin_Re_map(basin): #input the geodataframe of the basin to plot
     fig, axes = plt.subplots(figsize=(10,10))
 
     #Clipping the Re_WY raster to the GW basin shapefile (AZ Boundary)
-    Re_WY_clipped = Re_WY.rio.clip(GW_basin.geometry, GW_basin.crs, drop=True)
+    Re_WY_clipped = Re_WY.rio.clip(GW_basin.geometry, GW_basin.crs, drop=False)
 
     #Plotting the clipped Re_WY raster and the GW basin polygons
     Re_WY_clipped.plot(ax=axes, cmap="Blues", vmin=0, vmax=20, cbar_kwargs={"label": "Groundwater recharge (mm)"})
@@ -33,7 +33,7 @@ def create_basin_Re_map(basin): #input the geodataframe of the basin to plot
         #feature = GW_basin.iloc[[0]]
 
     #Clipping the raster to the specified groundwater basin
-    Re_WY_basin_clip = Re_WY.rio.clip(feature.geometry, GW_basin.crs, drop=True)
+    Re_WY_basin_clip = Re_WY.rio.clip(feature.geometry, GW_basin.crs, drop=False)
     Re_WY_basin_clip.plot(ax=axins, cmap="Blues", vmin=0, vmax=20, add_colorbar=False)
     feature.plot(ax=axins, facecolor="none", edgecolor="black", linewidth=1.5)
 
