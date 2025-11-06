@@ -1,0 +1,24 @@
+# Variable definition:
+# P = basin averaged precipitation (mm) from NWM forcing AORC (AWS: preicp.zarr; Variable: RAINRATE)
+# P_maxD = basin averaged maximum daily precipitation (mm) from NWM forcing AORC (Derived from P)
+# P_maxH = basin averaged maximum hourly precipitation (mm) from NWM forcing AORC (Derived from P)
+# P_WET_DAYS = Number of wet days (days) from NWM forcing AORC (Derived from P)
+# P_DRY_DAYS = Number of dry days (days) from NWM forcing AORC (Derived from P)
+# ET = basin averaged potential evapotranspiration (mm) from NWM output (AWS: ldastout.zarr; Variable: ACCET)
+# SR = basin averaged surface runoff (mm) from NWM output (AWS: chrtout.zarr; Variable: qSfcLatRunoff)
+# TR = basin averaged lateral runoff (mm) from NWM output (AWS: chrtout.zarr; Variable: q_lateral)
+# Re = basin averaged groundwater inflow (mm) from NWM output (AWS: gwout.zarr; Variable: gw_inflow)
+# Note: SR, TR and Re are defined over each reach/catchment of NWM. They are converted to grids first using spatial weights associated with each grid. Please refer to script 01_runoff_catchment_to_grid.py for details.
+
+# Statistic definitions:
+# LTM = Long Term Mean (YYYY-YYYY) - average over the entire season/year
+# LTSD = Long Term Standard Deviation (YYYY-YYYY) - standard deviation over the entire season/year
+# LTCV = Long Term Coefficient of Variation (YYYY-YYYY) - coefficient of variation over the entire season/year
+
+# Season/Year definitions:
+# WY = Water Year (Oct-Sep) - average over the water year
+# JFM = January, February, March - average over the first quarter of the year
+# AMJ = April, May, June - average over the second quarter of the year
+# JAS = July, August, September - average over the third quarter of the year
+# OND = October, November, December - average over the fourth quarter of the year
+
